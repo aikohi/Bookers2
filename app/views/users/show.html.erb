@@ -19,10 +19,9 @@
     <tr>
         <td>
          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+        <%= link_to book.title, book_path(book.id), class: "show_#{book.id}" %>
         </td>
-        <td><%= link_to book.title, book_path(book.id), class: "show_#{book.id}" %>
-        </td>
-        <td>&nbsp;&nbsp;<%= book.opinion %></td>
+        <td><%= book.opinion %></td>
     </tr>
    <% end %>
   </tbody>
