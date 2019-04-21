@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+<p><%= notice %></p>
+
+<%= render 'books/list' %>
+
+<section class="title clearfix">
+<h1>Books</h1>
+ <table class="table table-hover">
+  <thead>
+   <tr>
+    <th>Title</th>
+    <th>&nbsp;Opinion</th>
+    <th></th>
+   </tr>
+  </thead>
+
+ <tbody>
+  <% @books_user.each do |book| %>
+    <tr>
+        <td>
+         <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+        </td>
+        <td><%= link_to book.title, book_path(book.id), class: "show_#{book.id}" %>
+        </td>
+        <td>&nbsp;&nbsp;<%= book.opinion %></td>
+    </tr>
+   <% end %>
+  </tbody>
+ </table>
+<% end %>

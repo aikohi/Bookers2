@@ -1,0 +1,20 @@
+<section class="userinfo">
+	<h1>User info</h1>
+ 	<%= form_for(@user) do |f| %>
+		<div class="namelabel">
+       	 <label for="name">Name</label>
+        	<%= f.text_field :name, class: "name", autofocus: true, id:"inputEmail", placeholder:"user[name]" %>
+   		 </div>
+
+    	<div class="imagelabel">
+     		<label class="control-label sr-only" for="inputEmail">Image</label>
+    		<%= f.attachment_field :profile_image, class: "user_image", placeholder: "ファイルを選択" %>
+    	</div><br>
+
+    	<div class="introductionlabel">
+     		<label for="introduction">Introduction</label>
+        		<%= f.text_field :introduction, class: "introduction", autofocus: true, id:"inputEmail",size:"30*20" %>
+        </div>
+
+         <%= f.submit "Update User" %>
+<% end %>

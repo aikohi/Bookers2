@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<header>
+</header>
+<body>
+<%= render 'books/list' %>
+
+<sectin class="title clearfix">
+  <h2>Users</h2>
+	<table class="table clearfix">
+  	 <thead>
+      <tr>
+	   <th>image&nbsp;&nbsp;&nbsp;name</th>
+	   <th></th>
+      </tr>
+  	 </thead>
+  	 <tbody>
+
+		<% @users.each do |user| %>
+	<tr>
+	   <td>
+       <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+       <%= user.name %>
+      </td>
+	   <td>&nbsp;&nbsp;<%= link_to "Show", user_path(user.id), class: "show_#{user.id}" %></td>
+    </tr>
+    <% end %>
+    </tbody>
+ </table>
+</body>
+</sectin>
+<div>
+&nbsp;
+</div>
+
+
+</html>
