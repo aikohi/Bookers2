@@ -3,7 +3,11 @@ before_action :authenticate_user!, except: [:top,:about]
 before_action :configure_permitted_parameters, if: :devise_controller?
 
 def after_sign_in_path_for(resource)
+<<<<<<< HEAD
   user_path(current_user.id)
+=======
+  user_path(@user.id)
+>>>>>>> origin/master
 end
 
 protected
