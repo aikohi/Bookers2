@@ -17,38 +17,36 @@
 
       <% if user_signed_in? %>
       <li>
-        <span class="glyphicon glyphicon-home" aria-hidden="true">
-        <%= link_to 'Home', user_path(current_user.id),class: "home" %></span>
+        <%= link_to 'Home', user_path(current_user.id),class: "home", class: "glyphicon glyphicon-home" %>
       </li>
 
       <li>
-        <span class="glyphicon glyphicon-user" aria-hidden="true"><%= link_to 'Users', users_path,class: "users" %></span>
+        <%= link_to 'Users', users_path,class: "users", class: "glyphicon glyphicon-user" %>
       </li>
 
       <li>
-        <span class="glyphicon glyphicon-book" aria-hidden="true"><%= link_to 'Books', books_path,class: "books" %></span>
+        <%= link_to 'Books', books_path,class: "books", class: "glyphicon glyphicon-book" %>
       </li>
 
       <li>
-      <span class="glyphicon glyphicon-log-out" aria-hidden="true"><%= link_to "Logout", destroy_user_session_path, class: "logout", method: :delete %></span>
+      <%= link_to "Logout", destroy_user_session_path, class: "logout", class: "glyphicon glyphicon-log-out", method: :delete %>
       </li>
 
       <% else %>
       <li>
-        <span class="glyphicon glyphicon-home" aria-hidden="true">
-        <%= link_to 'Home', "/",class: "home" %></span>
+        <%= link_to 'Home', "/",class: "home", class: "glyphicon glyphicon-home" %>
       </li>
 
       <li>
-        <span class="glyphicon glyphicon-link" aria-hidden="true"><%= link_to "About", about_path,class: "about" %></span>
+        <%= link_to "About", about_path,class: "about", class: "glyphicon glyphicon-link" %>
       </li>
 
       <li>
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"><%= link_to "Sign up", new_user_registration_path,class: "sign_up" %></span>
+        <%= link_to "Sign up", new_user_registration_path,class: "sign_up", class: "glyphicon glyphicon-edit" %>
       </li>
 
       <li>
-        <span class="glyphicon glyphicon-log-in" aria-hidden="true"><%= link_to "Log in", new_user_session_path,class: "sign_in" %></span>
+        <%= link_to "Log in", new_user_session_path,class: "sign_in", class: "glyphicon glyphicon-log-in" %>
       </li>
     <% end %>
   </ul>

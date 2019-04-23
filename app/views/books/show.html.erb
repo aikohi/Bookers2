@@ -1,3 +1,4 @@
+<%= render 'books/list', books: @books, book: @book_new, user: @user %>
 
 <div class="flash">
   <%= flash[:success] %>
@@ -6,14 +7,16 @@
   <%= flash[:update] %>
 </div>
 
-<%= render 'books/list', books: @books %>
+
+
  <section class="title clearfix">
   <h1>Book detail</h1>
    <table class="table">
    	  <tr>
    	 	<td>
    	 	<%= link_to user_path(@user.id),class: "user_#{@user.id}" do %>
-   	 	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %>
+   	 	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><br>
+   	 		<%= @book.user.name %>
    	 	<% end %>
    	    </td>
    	    <td>

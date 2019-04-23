@@ -13,6 +13,15 @@
 
     	<div class="introductionlabel">
      		<label for="introduction">Introduction</label>
+                <% if @user.errors.any? %>
+                  <div id="error_explanation">
+                    <ul>
+                      <% @user.errors.full_messages.each do |message| %>
+                        <li>Error！！<%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
         		<%= f.text_field :introduction, class: "introduction", autofocus: true, id:"inputEmail",size:"30*20" %>
         </div>
 

@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<header>
-</header>
-<body>
-<%= render 'books/list', books: @books %>
+
+<%= render 'books/list', books: @books, book: @book, user: @user %>
 
 <sectin class="title clearfix"><h2>Books</h2>
  <table class="table clearfix">
@@ -31,9 +24,7 @@
    <% end %>
   </tbody>
  </table>
-</body>
 </sectin>
 <div>
 &nbsp;
 </div>
-</html>

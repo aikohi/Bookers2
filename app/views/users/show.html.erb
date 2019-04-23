@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <p><%= notice %></p>
 
-<%= render 'books/list' %>
+<%= render 'books/list',book: @book, user: @user %>
 
 <section class="title clearfix">
 <h1>Books</h1>
