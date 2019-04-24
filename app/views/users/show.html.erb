@@ -3,6 +3,10 @@
 
 <%= render 'books/list',book: @book, user: @user %>
 
+<div class="flash">
+  <%= flash[:userinfo_update] %>
+</div>
+
 <section class="title clearfix">
 <h1>Books</h1>
  <table class="table table-hover">
