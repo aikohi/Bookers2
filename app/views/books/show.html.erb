@@ -37,4 +37,40 @@
 		</td>
 	  </tr>
    </table>
-  </section>
+<!--コメント機能-->
+  <%= form_for [@book, @post_comment] do |f| %>
+    <div class="row">
+        <div class="col-sm-12">
+            <%= f.text_field :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+        </div>
+    </div>
+    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+<% end %>
+
+<div class="line-bc">
+  <% @book.post_comments.each do |post_comment| %>
+   		<li class="comment">
+   		</style>
+            <div class="comment-body bb">
+                <div class="comment-text">
+                    <div class="comment-author clearfix">
+                        <%= post_comment.user.name %>さん
+                        <span class="comment-date"><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
+                    </div>
+                    <div class="balloon6">
+                    	<div class="chatting">
+                          <div class="faceicon">
+                            <%= attachment_image_tag post_comment.user, :profile_image, fallback: "no_image.jpg" %>
+                          </div>
+        						      <div class="says">
+                      		  <%= post_comment.comment %>
+                      		</div>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    <% end %>
+</div>
+<!--------------------->
+</section>

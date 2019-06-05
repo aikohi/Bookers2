@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
 
     def index
-        @books = Book.all
+        #@books = Book.all
+        @books = Book.search(params[:search]) #検索機能
         @book = Book.new
         @user = current_user
     end
@@ -38,6 +39,8 @@ class BooksController < ApplicationController
     def show
     	@book = Book.find(params[:id])
         @book_new = Book.new
+        @post_comment = PostComment.new  #コメント機能
+        @favorite = Favorite.new
         @user = @book.user
     end
 

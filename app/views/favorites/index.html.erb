@@ -1,0 +1,18 @@
+<h2>My Favorite</h2>
+
+<% @favorites.each do |favorite| %>
+	<div class="">
+		<table>
+			<tr>
+				<td class="col-lg-6">
+                    <%= link_to book_path(favorite.book.id) do %>
+					商品名：<%= favorite.book.title %><br>
+                    <% end %>
+                </td>
+				<td class="col-lg-6">
+				<%= link_to 'お気に入りを解除する', favorites_path(favorite.id), method: :delete, class: "btn btn bg-info" %>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>

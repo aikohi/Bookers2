@@ -21,6 +21,11 @@
       </li>
 
       <li>
+        <%= link_to 'お気に入り', favorites_path(current_user.id), class: "glyphicon glyphicon-home" %>
+      </li>
+
+
+      <li>
         <%= link_to 'Users', users_path,class: "users", class: "glyphicon glyphicon-user" %>
       </li>
 
