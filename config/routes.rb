@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'favorites/index'
   get "/" => "users#top"
   get "/about" => "users#about"
   devise_for :users
@@ -9,8 +8,9 @@ Rails.application.routes.draw do
   resources :books
   resources :books, only: [:new, :create, :index, :show, :destroy, :new] do
   	resource :post_comments, only: [:create, :destroy] #コメント機能
-    resources :favorites, only: [:index]
+    resource :favorites, only: [:create, :destroy]  #お気に入り
   end
-  resources :users, only: [:show, :edit, :update,:index]
-  resources :favorites, only: [:create, :destroy]
+  resources :users, only: [:show, :edit, :update,:index] do
+    resources :favorites, only: [:index]  #お気に入り
+  end
 end

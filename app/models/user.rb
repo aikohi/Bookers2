@@ -9,22 +9,7 @@ class User < ApplicationRecord
     has_many :favorites       #お気に入り
     has_many :favposts, through: :favorites, source: :book #お気に入り
 
-    #お気に入り追加
-  def like(book)
-    favorites.find_or_create_by(book_id: book.id)
-  end
-
-  #お気に入り削除
-  def unlike(book)
-    favorite = favorites.find_by(book_id: book.id)
-    favorite.destroy if favorite
-  end
-
-  #お気にり登録判定
-  def  favpost?(book)
-    self.favposts.include?(book)
-  end
-
+  
 
     attachment :profile_image
 

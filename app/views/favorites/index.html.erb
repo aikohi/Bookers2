@@ -10,7 +10,7 @@
                     <% end %>
                 </td>
 				<td class="col-lg-6">
-				<%= link_to 'お気に入りを解除する', favorites_path(favorite.id), method: :delete, class: "btn btn bg-info" %>
+				<%= link_to 'お気に入りを解除する', book_favorites_path(favorite.book.id), method: :delete, class: "btn btn bg-info" %>
 				</td>
 			</tr>
 		</table>

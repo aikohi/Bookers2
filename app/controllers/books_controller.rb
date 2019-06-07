@@ -40,8 +40,8 @@ class BooksController < ApplicationController
     	@book = Book.find(params[:id])
         @book_new = Book.new
         @post_comment = PostComment.new  #コメント機能
-        @favorite = Favorite.new
-        @user = @book.user
+        @favorite = Favorite.new #お気に入り
+        @user = current_user
     end
 
     def update
